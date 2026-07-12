@@ -103,6 +103,43 @@ const IMG = {
   lkVpnMgmt: "/img/lkVpnMgmt.jpg",
   lkDnsPick: "/img/lkDnsPick.jpg",
   lkDnsDone: "/img/lkDnsDone.jpg",
+
+  // ---- BYOD flow screenshots (numbered per the walkthrough order) ----
+  b01: "/img/clickonappstore1.PNG",
+  b02: "/img/searchcompanyportal2.PNG",
+  b03: "/img/signintocompportal3.PNG",
+  b04: "/img/signinwithemail4.PNG",
+  b05: "/img/clickopenduo5.PNG",
+  b06: "/img/headbacktocompportal6.PNG",
+  b07: "/img/clickok7.PNG",
+  b08: "/img/allownotifications8.PNG",
+  b09: "/img/clickbegin9.PNG",
+  b09a: "/img/clickoncan9.PNG",
+  b10: "/img/clickoncontinue10.PNG",
+  b11: "/img/signinwithemail11.PNG",
+  b12: "/img/openduo12.PNG",
+  b13: "/img/acceptduo13.PNG",
+  b14: "/img/allow14.PNG",
+  b15: "/img/closeprofiledownload15.PNG",
+  b16: "/img/continuetocompanyportal16.PNG",
+  b16a: "/img/setupaccessdownloaded16a.PNG",
+  b17: "/img/howtoinstall17.PNG",
+  b18: "/img/clickonsettings18.PNG",
+  b19: "/img/moreforyouriphone19.PNG",
+  b20: "/img/clickviewprofile20.PNG",
+  b21: "/img/clickinstallprofile21.PNG",
+  b22: "/img/enterpasscode22.PNG",
+  b23: "/img/installprofile23.PNG",
+  b24: "/img/installprofile24.PNG",
+  b25: "/img/clicktrust25.PNG",
+  b26: "/img/enrollingcertificate26.PNG",
+  b27: "/img/clickcheckcircle27.PNG",
+  b28: "/img/choosepersonal28.PNG",
+  b29: "/img/installmanagementprofile29.PNG",
+  b30: "/img/checkingdevicesetting30.PNG",
+  b31: null, // "Manage the app" prompt — screenshot pending from user
+  b32: "/img/installedapps32.PNG",
+  b33: "/img/youreallset35.PNG",
 };
 
 const BRAND = {
@@ -242,13 +279,13 @@ const STEPS = [
   { id: 36, section: "Apps", title: "Add Work Account", narration: "Outlook finds your MD Anderson account. Tap Add Work Account.", image: IMG.olAccountFound, hx: 50, hy: 88, htext: "Tap Add Work Account", sensitive: true },
   { id: 37, section: "Apps", title: "Enable Notifications → Turn On", narration: "On the Enable Notifications prompt, tap Turn On.", image: IMG.olEnableNotif, hx: 67, hy: 57, htext: "Tap Turn On" },
   { id: 38, section: "Apps", title: "Allow notifications", narration: "On the iOS notifications prompt, tap Allow. Your inbox will load, then you can swipe up to close Outlook.", image: IMG.olAllowNotif, hx: 67, hy: 58, htext: "Tap Allow" },
-  { id: 39, section: "Apps", title: "Open the Edge app", narration: "On the Home Screen, find and tap the Edge app.", image: IMG.edgeHome, hx: 62, hy: 72, htext: "Tap Edge" },
+  { id: 39, section: "Apps", title: "Open the Edge app", narration: "On the Home Screen, find and tap the Edge app.", image: IMG.edgeHome, hx: 70, hy: 68, htext: "Tap Edge" },
   { id: 40, section: "Apps", title: "Set as default browser", narration: "On the Make Microsoft Edge Your Default Browser screen, tap Set as default browser.", image: IMG.edgeMakeDefault, hx: 50, hy: 87, htext: "Tap Set as default browser" },
-  { id: 41, section: "Apps", title: "Tap Default Browser App", narration: "In the Edge settings screen that opens, tap Default Browser App (it currently shows Safari).", image: IMG.edgeSettings, hx: 50, hy: 50, htext: "Tap Default Browser App" },
+  { id: 41, section: "Apps", title: "Tap Default Browser App", narration: "In the Edge settings screen that opens, tap Default Browser App (it currently shows Safari).", image: IMG.edgeSettings, hx: 68, hy: 51, htext: "Tap Default Browser App" },
   { id: 42, section: "Apps", title: "Select Edge", narration: "On the Default Browser App screen, tap Edge so it shows a checkmark. Then close the app by swiping up.", image: IMG.edgePicker, hx: 50, hy: 20, htext: "Tap Edge" },
   { id: 43, section: "Apps", title: "Open the MS Defender app", narration: "On the Home Screen, find and tap the MS Defender app.", image: IMG.defHome, hx: 62, hy: 60, htext: "Tap MS Defender" },
   { id: 44, section: "Apps", title: "Allow Defender notifications", narration: "Microsoft Defender opens. On the notifications prompt, tap Allow so you're notified of threats and security updates.", image: IMG.defAllow, hx: 67, hy: 58, htext: "Tap Allow" },
-  { id: 45, section: "Apps", title: "Open Settings", narration: "Now activate the Employee Caller ID. On the Home Screen, tap the Settings app.", image: IMG.cidHome, hx: 85, hy: 71, htext: "Tap Settings" },
+  { id: 45, section: "Apps", title: "Open Settings", narration: "Now activate the Employee Caller ID. On the Home Screen, tap the Settings app.", image: IMG.cidHome, hx: 90, hy: 78, htext: "Tap Settings" },
   { id: 46, section: "Apps", title: "Scroll down and tap Apps", narration: "Scroll down in Settings until you see Apps, then tap it.", image: IMG.cidSettings, hx: 50, hy: 84, htext: "Tap Apps" },
   { id: 47, section: "Apps", title: "Tap Call Blocking & Identification", narration: "Open Phone, then tap Call Blocking and Identification.", image: IMG.cidPhone, hx: 50, hy: 48, htext: "Tap Call Blocking & Identification" },
   { id: 48, section: "Apps", title: "Toggle on the Employee app", narration: "Under Call Identification, toggle on the Employee app.", image: IMG.cidToggleOff, hx: 82, hy: 35, htext: "Toggle on Employee" },
@@ -263,7 +300,7 @@ const STEPS = [
   { id: 57, section: "Apps", title: "Caller ID list updated → OK", narration: "The Caller ID directory refresh is complete. Tap OK.", image: IMG.empUpdated, hx: 50, hy: 57, htext: "Tap OK" },
 
   // ---------- SECTION 8: Lookout & Secure DNS ----------
-  { id: 58, section: "Lookout", title: "Open the Lookout Work app", narration: "On the Home Screen, tap the Lookout Work app.", image: IMG.lkHome, hx: 15, hy: 13, htext: "Tap Lookout Work" },
+  { id: 58, section: "Lookout", title: "Open the Lookout Work app", narration: "On the Home Screen, tap the Lookout Work app.", image: IMG.lkHome, hx: 23, hy: 18, htext: "Tap Lookout Work" },
   { id: 59, section: "Lookout", title: "Let's get started → Continue", narration: "Lookout explains it needs permission for notifications, Secure DNS, and location. Tap Continue.", image: IMG.lkStart, hx: 50, hy: 90, htext: "Tap Continue" },
   { id: 60, section: "Lookout", title: "Allow While Using App", narration: "On the location prompt, tap Allow While Using App.", image: IMG.lkLocation, hx: 50, hy: 82, htext: "Tap Allow While Using App" },
   { id: 61, section: "Lookout", title: "Setup Secure DNS → Go to Settings", narration: "Lookout shows the Secure DNS setup steps. Tap Go to Settings.", image: IMG.lkDnsSetup, hx: 50, hy: 75, htext: "Tap Go to Settings" },
@@ -274,7 +311,200 @@ const STEPS = [
   { id: 66, section: "Lookout", title: "Lookout Secure DNS is active", narration: "Lookout Work now shows a checkmark. Secure DNS is active and your enrollment is complete.", image: IMG.lkDnsDone, hx: null, hy: null, htext: "", doneLabel: "Finish enrollment →" },
 ];
 
-const TOTAL = STEPS.length;
+// -----------------------------------------------------------------------------
+// BYOD (Bring Your Own Device) — personal iPhone/iPad Intune enrollment
+// -----------------------------------------------------------------------------
+const SECTIONS_BYOD = [
+  "Install",
+  "Sign In",
+  "Setup Access",
+  "Download Profile",
+  "Install Profile",
+  "Finish Setup",
+  "Apps",
+];
+
+const STEPS_BYOD = [
+  // ---------- SECTION 1: Install ----------
+  {
+    id: 1, section: "Install",
+    title: "Before you start — previous AirWatch enrollment?",
+    narration: "If your device was previously enrolled with AirWatch, you'll need to remove that first. Pick the option that matches your device to continue.",
+    image: null, hx: null, hy: null, htext: "",
+    branch: {
+      question: "Were you previously enrolled with AirWatch?",
+      options: [
+        {
+          label: "No — this device has never been enrolled",
+          steps: ["You're good to go. Tap Continue to move on."],
+        },
+        {
+          label: "Yes — I need to remove the old profile",
+          steps: [
+            "Open Settings, tap General, then tap VPN & Device Management.",
+            "Under Mobile Device Management, tap Device Manager.",
+            "Tap Remove Management.",
+            "Manually delete the AirWatch Hub Agent app from your Home Screen.",
+            "If you're not sure or something doesn't match, contact 4INFO before continuing.",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: 2, section: "Install",
+    title: "Open the App Store",
+    narration: "On your device, tap the App Store on your Home Screen.",
+    image: IMG.b01, hx: 88, hy: 40, htext: "Tap App Store",
+    spotlight: { x: 74, y: 31, w: 21, h: 14 },
+  },
+  {
+    id: 3, section: "Install",
+    title: "Search Intune Company Portal and tap Get",
+    narration: "Search for Intune Company Portal and tap Get to install it. Once it finishes, swipe up and tap the Comp Portal app to open it.",
+    image: IMG.b02, hx: 92, hy: 65, htext: "Tap Get",
+  },
+
+  // ---------- SECTION 2: Sign In ----------
+  {
+    id: 4, section: "Sign In",
+    title: "Sign in to Comp Portal",
+    narration: "The Comp Portal app opens on the sign-in screen. Tap Sign in to begin.",
+    image: IMG.b03, hx: 62, hy: 57, htext: "Tap Sign in",
+  },
+  {
+    id: 5, section: "Sign In",
+    title: "Enter your MDA email",
+    narration: "Type your MD Anderson email address, then tap Next. On the next screen, enter your password and tap Sign in.",
+    image: IMG.b04, hx: 91, hy: 44, htext: "Tap Sign in",
+    sensitive: true,
+    blurAreas: [{ x: 4, y: 18, w: 18.5, h: 4 }],
+  },
+  {
+    id: 6, section: "Sign In",
+    title: "Open Duo Mobile",
+    narration: "Duo needs to check this device. Tap Open Duo Mobile. On the separate phone that has Duo Mobile installed, approve the push notification.",
+    image: IMG.b05, hx: 72, hy: 42, htext: "Tap Open Duo Mobile",
+  },
+  {
+    id: 7, section: "Sign In",
+    title: "Head back to Comp Portal",
+    narration: "After you approve the login in Duo Mobile, tap Comp Portal in the top-left corner to head back to the enrollment flow.",
+    image: IMG.b06, hx: 20, hy: 6, htext: "Tap Comp Portal",
+  },
+
+  // ---------- SECTION 3: Setup Access ----------
+  {
+    id: 8, section: "Setup Access",
+    title: "Get notified so you don't lose access → OK",
+    narration: "On the Get Notified So You Don't Lose Access screen, tap OK.",
+    image: IMG.b07, hx: 60, hy: 91, htext: "Tap OK",
+  },
+  {
+    id: 9, section: "Setup Access",
+    title: "Allow Comp Portal notifications",
+    narration: "When iOS asks whether Comp Portal can send notifications, tap Allow.",
+    image: IMG.b08, hx: 78, hy: 59, htext: "Tap Allow",
+  },
+  {
+    id: 10, section: "Setup Access",
+    title: "Set up MDA access → Begin",
+    narration: "On the Set Up MD Anderson Cancer Center Access screen, tap Begin.",
+    image: IMG.b09, hx: 60, hy: 91, htext: "Tap Begin",
+  },
+  {
+    id: 11, section: "Setup Access",
+    title: "Device Management & Your Privacy → Can",
+    narration: "The Device Management and Your Privacy screen shows what MD Anderson can and cannot see on your device. Tap Can to review the list, then tap Continue at the bottom.",
+    image: IMG.b09a, hx: 85, hy: 42, htext: "Tap Can, then Continue",
+    extraDots: [{ x: 66, y: 95 }],
+  },
+  {
+    id: 12, section: "Setup Access",
+    title: "Back at the setup checklist → Continue",
+    narration: "Privacy review is complete — the setup checklist reappears with the first item checked. Tap Continue.",
+    image: IMG.b10, hx: 66, hy: 90, htext: "Tap Continue",
+  },
+
+  // ---------- SECTION 4: Download Profile ----------
+  {
+    id: 13, section: "Download Profile",
+    title: "Sign in again to download the profile",
+    narration: "Enter your MD Anderson email again to re-authenticate for the profile download, then tap Sign in.",
+    image: IMG.b11, hx: 91, hy: 44, htext: "Tap Sign in",
+    sensitive: true,
+    blurAreas: [{ x: 4, y: 18, w: 18.5, h: 4 }],
+  },
+  {
+    id: 14, section: "Download Profile",
+    title: "Open Duo Mobile again",
+    narration: "Tap Open Duo Mobile so Duo can verify this download.",
+    image: IMG.b12, hx: 72, hy: 42, htext: "Tap Open Duo Mobile",
+  },
+  {
+    id: 15, section: "Download Profile",
+    title: "Accept the Duo push",
+    narration: "On your separate phone with Duo Mobile, tap the green Approve icon to approve the profile download.",
+    image: IMG.b13, hx: 83, hy: 85, htext: "Tap Approve",
+    blurAreas: [{ x: 19, y: 23.5, w: 47, h: 6 }, { x: 14, y: 67.5, w: 55, h: 4 }],
+  },
+  {
+    id: 16, section: "Download Profile",
+    title: "Allow the configuration profile download",
+    narration: "iOS asks whether portal.manage.microsoft.com can download a configuration profile. Tap Allow.",
+    image: IMG.b14, hx: 92, hy: 57, htext: "Tap Allow",
+  },
+  {
+    id: 17, section: "Download Profile",
+    title: "Head back to your app",
+    narration: "Once the push is approved in Duo, you'll see Head Back to Your App. Tap the top-left corner to return to the Comp Portal profile download.",
+    image: IMG.b06, hx: 20, hy: 6, htext: "Tap to head back",
+  },
+  {
+    id: 18, section: "Download Profile",
+    title: "Profile Downloaded → Close",
+    narration: "When you see the Profile Downloaded prompt, tap Close. You'll install the profile in the next section.",
+    image: IMG.b15, hx: 62, hy: 57, htext: "Tap Close",
+  },
+  { id: 19, section: "Download Profile", title: "Continue to Company Portal", narration: "On the Continue to Company Portal screen, tap Continue.", image: IMG.b16, hx: 60, hy: 60, htext: "Tap Continue" },
+
+  { id: 20, section: "Download Profile", title: "Setup checklist — download done → Continue", narration: "Back in Comp Portal, the setup checklist now shows Review Privacy Information and Download Management Profile checked. Tap Continue to move on to installing the profile.", image: IMG.b16a, hx: 66, hy: 90, htext: "Tap Continue" },
+
+  // ---------- SECTION 5: Install Profile ----------
+  { id: 21, section: "Install Profile", title: "How to install the profile", narration: "Comp Portal shows the steps for installing the management profile. Read them, then follow along on the next screens.", image: IMG.b17, hx: null, hy: null, htext: "", doneLabel: "Got it, continue →" },
+  { id: 22, section: "Install Profile", title: "Open Settings", narration: "Swipe up to close Comp Portal, then tap the Settings app on your Home Screen.", image: IMG.b18, hx: 88, hy: 40, htext: "Tap Settings", spotlight: { x: 74, y: 31, w: 21, h: 14 } },
+  { id: 23, section: "Install Profile", title: "Tap the downloaded profile banner", narration: "At the top of Settings, tap the banner showing Profile Downloaded (under your Apple ID card).", image: IMG.b19, hx: 80, hy: 44, htext: "Tap More for Your iPhone" },
+  { id: 24, section: "Install Profile", title: "Review the Management Profile", narration: "The Management Profile screen opens. Review the details, then tap Install in the top-right.", image: IMG.b20, hx: 33, hy: 65, htext: "Tap View Profile", autoPlay: 3000 },
+  { id: 25, section: "Install Profile", title: "Tap Install", narration: "On the profile detail screen, tap Install in the top-right corner.", image: IMG.b21, hx: 91, hy: 12, htext: "Tap Install" },
+  { id: 26, section: "Install Profile", title: "Enter your device passcode", narration: "iOS asks for your device passcode to authorize the installation. Enter it now.", image: IMG.b22, hx: 50, hy: 50, htext: "Enter passcode", sensitive: true },
+  { id: 27, section: "Install Profile", title: "Confirm Install", narration: "On the warning sheet, tap Install to confirm.", image: IMG.b23, hx: 77, hy: 57, htext: "Tap Install" },
+  { id: 28, section: "Install Profile", title: "Install one more time", narration: "One more Install confirmation appears. Tap Install.", image: IMG.b24, hx: 91, hy: 12, htext: "Tap Install" },
+  { id: 29, section: "Install Profile", title: "Tap Trust", narration: "iOS asks whether you trust MD Anderson to manage this device. Tap Trust.", image: IMG.b25, hx: 76, hy: 58, htext: "Tap Trust" },
+  { id: 30, section: "Install Profile", title: "Enrolling certificate…", narration: "The profile is being enrolled. Wait here — this can take a minute.", image: IMG.b26, hx: null, hy: null, htext: "", wait: 3000, waitLabel: "Enrolling certificate…", doneLabel: "Continue →" },
+  { id: 31, section: "Install Profile", title: "Tap Done", narration: "When you see the profile with a checkmark, tap Done to close Settings.", image: IMG.b27, hx: 93, hy: 13, htext: "Tap the blue checkmark" },
+
+  // ---------- SECTION 6: Finish Setup ----------
+  { id: 32, section: "Finish Setup", title: "Choose the Personal category", narration: "Reopen Comp Portal. On the Choose the Best Category for This Device screen, tap Personal, then Continue.", image: IMG.b28, hx: 50, hy: 50, htext: "Tap Personal, then Continue" },
+  { id: 33, section: "Finish Setup", title: "Install the management profile", narration: "On the You Need to Install the Management Profile screen, tap Continue.", image: IMG.b29, hx: 66, hy: 90, htext: "Tap Continue" },
+  { id: 34, section: "Finish Setup", title: "Checking device settings…", narration: "Comp Portal checks that your device meets MDA policy. If it stalls, tap Retry. Full compliance can take up to 30 minutes — you can close the Comp Portal app while you wait.", image: IMG.b30, hx: 50, hy: 50, htext: "Tap Retry if needed", wait: 3000, waitLabel: "Checking device settings…", doneLabel: "Continue →" },
+
+  { id: 35, section: "Finish Setup", title: "You're all set!", narration: "Comp Portal confirms enrollment is complete — you now have access to your email, devices, Wi-Fi, and apps for work. Tap Done.", image: IMG.b33, hx: 60, hy: 90, htext: "Tap Done" },
+
+  // ---------- SECTION 7: Apps ----------
+  { id: 36, section: "Apps", title: "Your work apps are installed", narration: "Your Home Screen now shows the managed work apps. Your device is enrolled and ready to use.", image: IMG.b32, hx: null, hy: null, htext: "", blurAreas: [{ x: 84, y: 6, w: 13, h: 7 }], doneLabel: "Continue →" },
+  {
+    id: 37, section: "Apps",
+    title: "If prompted, manage or install an app",
+    narration: "Work apps (Outlook, Authenticator, OneDrive, MS Defender, Teams, Edge, Employee) install automatically. If an app was already on your device, you may see a Manage the App prompt — tap OK. If an app didn't install on its own, open Comp Portal, tap the app, then Install, and follow the App Store prompt.",
+    image: IMG.b31, hx: null, hy: null, htext: "",
+    doneLabel: "Finish enrollment →",
+  },
+];
+
+const FLOWS = {
+  corporate: { steps: STEPS, sections: SECTIONS },
+  byod: { steps: STEPS_BYOD, sections: SECTIONS_BYOD },
+};
 
 function PhoneFrame({ step, onHotspot, done }) {
   const hasImage = !!step.image;
@@ -322,11 +552,48 @@ function PhoneFrame({ step, onHotspot, done }) {
           </div>
         )}
 
-        {/* hotspot */}
-        {step.hx != null && (
-          <button onClick={onHotspot} aria-label={step.htext}
+        {/* blur specific regions (e.g. email addresses on sign-in screens) */}
+        {Array.isArray(step.blurAreas) && step.blurAreas.map((b, k) => (
+          <div key={`blur-${k}`} aria-hidden="true" style={{
+            position: "absolute",
+            left: `${b.x}%`, top: `${b.y}%`, width: `${b.w}%`, height: `${b.h}%`,
+            backdropFilter: "blur(9px)", WebkitBackdropFilter: "blur(9px)",
+            background: "rgba(255,255,255,0.06)", borderRadius: 4, zIndex: 6,
+          }} />
+        ))}
+
+        {/* spotlight: dim + blur everything except a target rectangle */}
+        {step.spotlight && (() => {
+          const s = step.spotlight;
+          const overlay = {
+            position: "absolute",
+            backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)",
+            background: "rgba(6,10,20,0.55)", zIndex: 7,
+          };
+          return (
+            <>
+              <div style={{ ...overlay, left: 0, right: 0, top: 0, height: `${s.y}%` }} />
+              <div style={{ ...overlay, left: 0, right: 0, top: `${s.y + s.h}%`, bottom: 0 }} />
+              <div style={{ ...overlay, left: 0, top: `${s.y}%`, width: `${s.x}%`, height: `${s.h}%` }} />
+              <div style={{ ...overlay, left: `${s.x + s.w}%`, top: `${s.y}%`, right: 0, height: `${s.h}%` }} />
+              <div style={{
+                position: "absolute",
+                left: `${s.x}%`, top: `${s.y}%`, width: `${s.w}%`, height: `${s.h}%`,
+                border: `2px solid ${BRAND.cyan}`, borderRadius: 12,
+                boxShadow: `0 0 0 4px rgba(229,25,55,0.25)`,
+                pointerEvents: "none", zIndex: 7,
+              }} />
+            </>
+          );
+        })()}
+
+        {/* hotspot(s) — solid dot. Primary dot is hx/hy; a step may add
+            more via extraDots: [{x,y}]. Positions sit just off the target
+            so the word/icon underneath still peeks out. */}
+        {step.hx != null && [{ x: step.hx, y: step.hy }, ...(step.extraDots || [])].map((d, k) => (
+          <button key={`hs-${k}`} onClick={onHotspot} aria-label={step.htext}
             style={{
-              position: "absolute", left: `${step.hx}%`, top: `${step.hy}%`,
+              position: "absolute", left: `${d.x}%`, top: `${d.y}%`,
               transform: "translate(-50%,-50%)", width: 52, height: 52,
               borderRadius: "50%", border: "none", cursor: "pointer",
               background: "rgba(229,25,55,0.16)", zIndex: 8,
@@ -340,7 +607,7 @@ function PhoneFrame({ step, onHotspot, done }) {
               boxShadow: "0 2px 10px rgba(229,25,55,0.55)",
             }} />
           </button>
-        )}
+        ))}
 
         {/* sensitive badge */}
         {step.sensitive && (
@@ -359,7 +626,7 @@ function PhoneFrame({ step, onHotspot, done }) {
 }
 
 export default function EnrollmentWalkthrough() {
-  const [started, setStarted] = useState(false);
+  const [path, setPath] = useState(null); // null | "corporate" | "byod"
   const [i, setI] = useState(0);
   const [completed, setCompleted] = useState(new Set());
   const [waiting, setWaiting] = useState(false);
@@ -368,9 +635,29 @@ export default function EnrollmentWalkthrough() {
   const [tapped, setTapped] = useState(false);
   const timerRef = useRef(null);
 
-  const step = STEPS[i];
-  const isLast = i === TOTAL - 1;
-  const pct = Math.round((completed.size / TOTAL) * 100);
+  const flow = path ? FLOWS[path] : FLOWS.corporate;
+  const activeSteps = flow.steps;
+  const activeSections = flow.sections;
+  const total = activeSteps.length;
+
+  const step = activeSteps[i];
+  const isLast = i === total - 1;
+  const pct = Math.round((completed.size / total) * 100);
+
+  function startPath(p) {
+    setPath(p);
+    setI(0);
+    setCompleted(new Set());
+    setTapped(false);
+    setBranchPick(null);
+  }
+  function restart() {
+    setPath(null);
+    setI(0);
+    setCompleted(new Set());
+    setTapped(false);
+    setBranchPick(null);
+  }
 
   useEffect(() => () => clearInterval(timerRef.current), []);
 
@@ -388,23 +675,41 @@ export default function EnrollmentWalkthrough() {
 
   // On every step change: kill any timer left over from the previous step
   // and clear the waiting state so a stale spinner/advance can't fire.
+  // Also auto-reveal the branch UI on no-hotspot branch steps.
   useEffect(() => {
     clearInterval(timerRef.current);
     setWaiting(false);
-  }, [i]);
+    const s = activeSteps[i];
+    if (s && s.branch && s.hx == null) setTapped(true);
+  }, [i, activeSteps]);
 
   // Auto-start the wait when landing on a no-hotspot wait step (e.g. activation).
   useEffect(() => {
-    if (started && i < TOTAL && step && step.hx == null && step.wait && !completed.has(step.id)) {
+    if (path && i < total && step && step.hx == null && step.wait && !completed.has(step.id)) {
       runWait(step.wait);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [i, started]);
+  }, [i, path]);
+
+  // Auto-play: advance on a timer while still showing the step's hotspot as a cue.
+  useEffect(() => {
+    if (!(path && i < total && step && step.autoPlay && !completed.has(step.id))) return;
+    const startIndex = i;
+    const t = setTimeout(() => {
+      setI((cur) => {
+        if (cur !== startIndex) return cur; // moved on already; ignore
+        setCompleted((c) => new Set(c).add(activeSteps[cur].id));
+        return cur < total - 1 ? cur + 1 : total;
+      });
+    }, step.autoPlay);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [i, path]);
 
   function markAndAdvance() {
     const next = new Set(completed); next.add(step.id); setCompleted(next);
     setTapped(false); setBranchPick(null);
-    setI((cur) => (cur < TOTAL - 1 ? cur + 1 : TOTAL));
+    setI((cur) => (cur < total - 1 ? cur + 1 : total));
   }
 
   function handleHotspot() {
@@ -427,8 +732,8 @@ export default function EnrollmentWalkthrough() {
         // Only advance if we are still on the step that started this wait.
         setI((cur) => {
           if (cur !== startIndex) return cur; // stale timer, ignore
-          setCompleted((c) => new Set(c).add(STEPS[cur].id));
-          return cur < TOTAL - 1 ? cur + 1 : TOTAL;
+          setCompleted((c) => new Set(c).add(activeSteps[cur].id));
+          return cur < total - 1 ? cur + 1 : total;
         });
       } else {
         setWaitLeft(remaining);
@@ -441,31 +746,45 @@ export default function EnrollmentWalkthrough() {
     markAndAdvance();
   }
 
-  // ---------- INTRO ----------
-  if (!started) {
+  // ---------- INTRO / PATH PICKER ----------
+  if (!path) {
     return (
       <Shell>
-        <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center", padding: "8px 0" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center", padding: "8px 0" }}>
           <BrandLogo />
           <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, color: BRAND.cyan, textTransform: "uppercase" }}>
             Mobile Device Services
           </div>
           <h1 className="ew-h1" style={{ fontSize: 38, lineHeight: 1.1, color: BRAND.ink, margin: "14px 0 10px", fontWeight: 800 }}>
-            Enroll your iPhone or iPad into Intune
+            Set up your iPhone or iPad with Intune
           </h1>
           <p style={{ color: BRAND.muted, fontSize: 16, lineHeight: 1.6, maxWidth: 620, margin: "0 auto" }}>
-            A guided, tap-along walkthrough. Follow each step in order — skipping steps can cause extra logins.
+            Choose the path that matches your device. Each is a guided, tap-along walkthrough.
           </p>
 
-          <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap", margin: "28px 0" }}>
-            <Stat n="~30 min" l="To complete" />
-            <Stat n="1 hour" l="Finish window" />
-            <Stat n={TOTAL} l="Guided steps" />
+          <div className="ew-cards" style={{
+            display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20,
+            maxWidth: 780, margin: "32px auto 8px",
+          }}>
+            <PathCard
+              badge="MDA-issued device"
+              title="Enroll your iPhone or iPad in Intune"
+              description="For iPhones and iPads owned and issued by MD Anderson."
+              meta={`~30 min · ${STEPS.length} guided steps`}
+              onClick={() => startPath("corporate")}
+            />
+            <PathCard
+              badge="Personal device (BYOD)"
+              title="Set up BYOD Intune on your personal device"
+              description="For your own iPhone or iPad. Requires iOS 18 or higher (iOS 26 recommended)."
+              meta={`~15 min · ${STEPS_BYOD.length} guided steps`}
+              onClick={() => startPath("byod")}
+            />
           </div>
 
           <div style={{
             background: "#fff7ec", border: `1px solid ${BRAND.gold}`, borderRadius: 14,
-            padding: "16px 20px", textAlign: "left", maxWidth: 620, margin: "0 auto 14px",
+            padding: "16px 20px", textAlign: "left", maxWidth: 620, margin: "24px auto 14px",
           }}>
             <div style={{ fontWeight: 700, color: BRAND.ink, marginBottom: 8, fontSize: 14 }}>Before you start — DUO</div>
             <ul style={{ margin: 0, paddingLeft: 18, color: BRAND.muted, fontSize: 13.5, lineHeight: 1.7 }}>
@@ -475,10 +794,8 @@ export default function EnrollmentWalkthrough() {
           </div>
 
           <div style={{ fontSize: 12.5, color: BRAND.muted, maxWidth: 620, margin: "0 auto 26px", lineHeight: 1.6 }}>
-            Instructions may vary slightly by device model or configuration. Supported: iPhone 14–17; iPad 8th gen+, Air 3rd gen+, Mini 5th gen+, Pro 11" 3rd gen+, Pro 12.9" 5th gen+, Pro 13" M4 &amp; M5.
+            MDA-issued device support: iPhone 14–17; iPad 8th gen+, Air 3rd gen+, Mini 5th gen+, Pro 11" 3rd gen+, Pro 12.9" 5th gen+, Pro 13" M4 &amp; M5. Instructions may vary slightly by model or configuration.
           </div>
-
-          <button onClick={() => setStarted(true)} style={primaryBtn}>Start enrollment →</button>
 
           <div style={{ marginTop: 24, fontSize: 12, color: BRAND.muted }}>
             Need help? 4INFO 713-794-4636 · Mobile Device Team 713-792-7233 (ext. 2-7233) · FCT3.5005
@@ -490,7 +807,7 @@ export default function EnrollmentWalkthrough() {
   }
 
   // ---------- FINISH ----------
-  if (i >= TOTAL) {
+  if (i >= total) {
     return (
       <Shell>
         <div style={{ maxWidth: 620, margin: "0 auto", textAlign: "center", padding: "30px 0" }}>
@@ -502,19 +819,19 @@ export default function EnrollmentWalkthrough() {
           }}>✓</div>
           <h1 className="ew-h1" style={{ fontSize: 34, color: BRAND.ink, fontWeight: 800, margin: "0 0 10px" }}>You're enrolled!</h1>
           <p style={{ color: BRAND.muted, fontSize: 16, lineHeight: 1.6 }}>
-            Your device is now managed and ready to use. All {TOTAL} steps complete.
+            Your device is now managed and ready to use. All {total} steps complete.
           </p>
           <div style={{
             display: "flex", justifyContent: "center", gap: 14, flexWrap: "wrap", margin: "26px 0",
           }}>
-            <Stat n={`${TOTAL}/${TOTAL}`} l="Steps done" />
+            <Stat n={`${total}/${total}`} l="Steps done" />
             <Stat n="100%" l="Complete" />
           </div>
           <div style={{ fontSize: 13, color: BRAND.muted, lineHeight: 1.6, marginBottom: 24 }}>
             Issues or questions? 4INFO 713-794-4636 · Mobile Device Team 713-792-7233 (ext. 2-7233) · ITSMobileDeviceTeam@mdanderson.org · FCT3.5005
           </div>
-          <button onClick={() => { setStarted(false); setI(0); setCompleted(new Set()); }} style={secondaryBtn}>
-            Restart walkthrough
+          <button onClick={restart} style={secondaryBtn}>
+            Back to path picker
           </button>
         </div>
         <Keyframes />
@@ -524,12 +841,13 @@ export default function EnrollmentWalkthrough() {
 
   // ---------- STEP VIEW ----------
   const activeSection = step.section;
+  const hidePhone = !!(step.branch && !step.image); // branch-only decision step
   return (
     <Shell>
       {/* progress chapters */}
       <div className="ew-chapters">
-        {SECTIONS.map((s) => {
-          const stepsIn = STEPS.filter((x) => x.section === s);
+        {activeSections.map((s) => {
+          const stepsIn = activeSteps.filter((x) => x.section === s);
           const doneIn = stepsIn.filter((x) => completed.has(x.id)).length;
           const isActive = s === activeSection;
           const allDone = doneIn === stepsIn.length;
@@ -554,7 +872,7 @@ export default function EnrollmentWalkthrough() {
       </div>
 
       <div style={{ fontSize: 12.5, color: BRAND.muted, textAlign: "center", margin: "10px 0 18px" }}>
-        Step {i + 1} of {TOTAL} · {pct}% complete
+        Step {i + 1} of {total} · {pct}% complete
       </div>
 
       {step.sequence ? (
@@ -579,7 +897,9 @@ export default function EnrollmentWalkthrough() {
       <div className="ew-row" style={{
         display: "flex", gap: 36, alignItems: "center", justifyContent: "center", flexWrap: "wrap",
       }}>
-        <PhoneFrame step={step} onHotspot={handleHotspot} done={completed.has(step.id)} />
+        {!hidePhone && (
+          <PhoneFrame step={step} onHotspot={handleHotspot} done={completed.has(step.id)} />
+        )}
 
         {/* instruction panel */}
         <div className="ew-panel" style={{ maxWidth: 380, flex: "1 1 320px", minWidth: 280 }}>
@@ -696,6 +1016,12 @@ export default function EnrollmentWalkthrough() {
             <button onClick={continueAfterBranch} style={primaryBtn}>
               {isLast ? "Finish" : "Got it, continue →"}
             </button>
+          ) : step.branch && step.hx == null && branchPick === null ? (
+            <div style={{
+              color: BRAND.muted, fontSize: 13, fontStyle: "italic", marginTop: 4,
+            }}>
+              Pick an option above to continue.
+            </div>
           ) : step.hx == null ? (
             <div>
               <div style={{
@@ -971,6 +1297,36 @@ function Stat({ n, l }) {
     </div>
   );
 }
+function PathCard({ badge, title, description, meta, onClick }) {
+  return (
+    <button className="ew-path-card" onClick={onClick} style={{
+      textAlign: "left", background: "#fff", border: `1.5px solid ${BRAND.line}`,
+      borderRadius: 16, padding: "22px 22px 20px", cursor: "pointer",
+      boxShadow: "0 8px 24px rgba(20,20,40,0.06)",
+      transition: "transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease",
+      display: "flex", flexDirection: "column", gap: 10,
+    }}>
+      <div style={{
+        display: "inline-block", alignSelf: "flex-start",
+        fontSize: 11, fontWeight: 700, color: "#fff", background: BRAND.blue,
+        padding: "4px 10px", borderRadius: 20, letterSpacing: 0.4, textTransform: "uppercase",
+      }}>{badge}</div>
+      <div style={{ fontSize: 19, fontWeight: 800, color: BRAND.ink, lineHeight: 1.25 }}>
+        {title}
+      </div>
+      <div style={{ fontSize: 13.5, color: BRAND.muted, lineHeight: 1.55 }}>
+        {description}
+      </div>
+      <div style={{
+        marginTop: 6, fontSize: 12, color: BRAND.muted, fontWeight: 600, letterSpacing: 0.3,
+        display: "flex", alignItems: "center", justifyContent: "space-between",
+      }}>
+        <span>{meta}</span>
+        <span style={{ color: BRAND.blue, fontSize: 16, fontWeight: 800 }}>→</span>
+      </div>
+    </button>
+  );
+}
 function Spinner() {
   return <div style={{
     width: 22, height: 22, borderRadius: "50%", flexShrink: 0,
@@ -1000,6 +1356,16 @@ function Keyframes() {
     *, *::before, *::after { box-sizing: border-box; }
     .ew-shell { overflow-x: hidden; }
 
+    /* path picker cards */
+    .ew-path-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(20,20,40,0.10);
+      border-color: ${BRAND.blueLight};
+    }
+    .ew-path-card:focus-visible {
+      border-color: ${BRAND.blue};
+    }
+
     /* progress chapters: horizontally scrollable strip on small screens */
     .ew-chapters { display: flex; gap: 6px; margin-bottom: 6px; flex-wrap: wrap; }
     .ew-chapter { flex: 1; min-width: 78px; }
@@ -1012,6 +1378,9 @@ function Keyframes() {
 
     @media (max-width: 720px) {
       .ew-shell { padding: 18px 14px !important; }
+
+      /* stack the path picker cards */
+      .ew-cards { grid-template-columns: 1fr !important; }
 
       /* 8 chapters won't fit side-by-side: let them scroll horizontally */
       .ew-chapters {
