@@ -125,7 +125,7 @@ const IMG = {
   b16a: "/img/setupaccessdownloaded16a.PNG",
   b17: "/img/howtoinstall17.PNG",
   b18: "/img/clickonsettings18.PNG",
-  b19: "/img/moreforyouriphone19.PNG",
+  b19: "/img/moreforyouriphone19v2.PNG",
   b20: "/img/clickviewprofile20.PNG",
   b21: "/img/clickinstallprofile21.PNG",
   b22: "/img/enterpasscode22.PNG",
