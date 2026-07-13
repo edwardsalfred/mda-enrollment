@@ -1083,8 +1083,6 @@ function MfaSequence({ steps, introAudio }) {
   const [soundOn, setSoundOn] = React.useState(true);
   const [blocked, setBlocked] = React.useState(false); // autoplay blocked by the browser
   const audioRef = React.useRef(null);
-  if (!audioRef.current && typeof window !== "undefined") audioRef.current = getSharedAudio();
-  const tryPlayRef = React.useRef(() => {});
   const timerRef = React.useRef(null);
 
   const cur = steps[idx];
@@ -1097,25 +1095,34 @@ function MfaSequence({ steps, introAudio }) {
     setIdx((i) => (i + 1) % steps.length);
   }, [phase, steps.length]);
 
-  // Point the shared element at the current clip and listen for its end.
-  React.useEffect(() => {
+  // Absolute URL of the current clip, used to check whether the audio element
+  // already has the right source loaded.
+  const clipUrl = React.useMemo(() => {
+    if (!clip || typeof window === "undefined") return clip || "";
+    try { return new URL(clip, window.location.href).href; } catch (e) { return clip; }
+  }, [clip]);
+
+  // Force the element onto the current clip and play from the start. Meant to
+  // be called from a user gesture (Replay / Play voiceover) — resets src if
+  // needed, resets currentTime, and calls play().
+  const playFromStart = React.useCallback(() => {
     const el = audioRef.current;
     if (!el || !clip) return;
-    if (el.src !== clip) { el.src = clip; try { el.load(); } catch (e) {} }
-    const onEnded = () => advance();
-    const onPlaying = () => setBlocked(false);
-    const onCanPlay = () => { if (playing && soundOn) tryPlayRef.current(); };
-    el.addEventListener("ended", onEnded);
-    el.addEventListener("playing", onPlaying);
-    el.addEventListener("canplay", onCanPlay);
-    return () => {
-      el.removeEventListener("ended", onEnded);
-      el.removeEventListener("playing", onPlaying);
-      el.removeEventListener("canplay", onCanPlay);
-    };
-  }, [clip, advance, playing, soundOn]);
+    audioUnlocked = true;
+    try { el.pause(); } catch (e) {}
+    if (el.src !== clipUrl) {
+      el.src = clip;
+      try { el.load(); } catch (e) {}
+    }
+    try { el.currentTime = 0; } catch (e) {}
+    el.muted = false;
+    const p = el.play();
+    if (p && typeof p.then === "function") {
+      p.then(() => setBlocked(false)).catch(() => setBlocked(true));
+    }
+  }, [clip, clipUrl]);
 
-  // Attempt playback. Safely: never touch currentTime before data is ready.
+  // Best-effort autoplay attempt (may be blocked by the browser).
   const tryPlay = React.useCallback(() => {
     const el = audioRef.current;
     if (!el || !clip) return;
@@ -1126,7 +1133,6 @@ function MfaSequence({ steps, introAudio }) {
     if (p && typeof p.then === "function") {
       p.then(() => setBlocked(false)).catch(() => setBlocked(true));
     } else {
-      // Older browsers return undefined; verify it actually started.
       setTimeout(() => {
         const a = audioRef.current;
         if (a && a.paused) setBlocked(true);
@@ -1134,7 +1140,23 @@ function MfaSequence({ steps, introAudio }) {
     }
   }, [clip]);
 
-  React.useEffect(() => { tryPlayRef.current = tryPlay; }, [tryPlay]);
+  // Point the element at the current clip and listen for its end.
+  React.useEffect(() => {
+    const el = audioRef.current;
+    if (!el || !clip) return;
+    if (el.src !== clipUrl) { el.src = clip; try { el.load(); } catch (e) {} }
+    const onEnded = () => advance();
+    const onPlaying = () => setBlocked(false);
+    const onCanPlay = () => { if (playing && soundOn) tryPlay(); };
+    el.addEventListener("ended", onEnded);
+    el.addEventListener("playing", onPlaying);
+    el.addEventListener("canplay", onCanPlay);
+    return () => {
+      el.removeEventListener("ended", onEnded);
+      el.removeEventListener("playing", onPlaying);
+      el.removeEventListener("canplay", onCanPlay);
+    };
+  }, [clip, clipUrl, advance, playing, soundOn, tryPlay]);
 
   // Drive playback whenever the clip or play state changes.
   React.useEffect(() => {
@@ -1163,10 +1185,10 @@ function MfaSequence({ steps, introAudio }) {
   }, []);
 
   function replayCurrent() {
-    setBlocked(false);
     setPlaying(true);
     if (!soundOn) setSoundOn(true);
-    tryPlay();
+    setBlocked(false);
+    playFromStart();
   }
   function goNextScreen() {
     if (phase === "intro") { setPhase("screens"); setIdx(0); return; }
@@ -1181,6 +1203,9 @@ function MfaSequence({ steps, introAudio }) {
 
   return (
     <div style={{ display: "flex", gap: 28, alignItems: "center", flexWrap: "wrap", justifyContent: "center" }}>
+      {/* Hidden but attached audio element — keeps browser user-activation
+          state reliable across Chrome desktop / mobile. */}
+      <audio ref={audioRef} preload="auto" playsInline style={{ display: "none" }} />
       {/* phone showing current frame */}
       <div className="ew-seq-phone" style={{
         position: "relative", width: 240, height: 496, borderRadius: 38, background: "#0c1220",
@@ -1235,7 +1260,7 @@ function MfaSequence({ steps, introAudio }) {
             padding: 12, marginBottom: 12,
           }}>
             <div style={{ fontSize: 12.5, color: BRAND.muted, marginBottom: 8 }}>
-              Your browser blocked audio from starting on its own.
+              Your browser blocked audio from starting on its own. Click below to play the voiceover.
             </div>
             <button className="ew-btn" onClick={replayCurrent} style={{
               ...primaryBtn, padding: "11px 20px", fontSize: 14, width: "100%",
@@ -1246,7 +1271,14 @@ function MfaSequence({ steps, introAudio }) {
         )}
 
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-          <button className="ew-btn" onClick={() => setPlaying((p) => !p)} style={seqBtn}>
+          <button className="ew-btn" onClick={() => {
+            setPlaying((p) => {
+              const next = !p;
+              const el = audioRef.current;
+              if (el) { if (next) { playFromStart(); } else { try { el.pause(); } catch (e) {} } }
+              return next;
+            });
+          }} style={seqBtn}>
             {playing ? "⏸ Pause" : "▶ Play"}
           </button>
           <button className="ew-btn" onClick={() => { setSoundOn((v) => !v); if (audioRef.current) audioRef.current.pause(); }} style={seqBtn}>
