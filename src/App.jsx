@@ -137,7 +137,7 @@ const IMG = {
   b28: "/img/choosepersonal28.PNG",
   b29: "/img/installmanagementprofile29.PNG",
   b30: "/img/checkingdevicesetting30.PNG",
-  b31: null, // "Manage the app" prompt — screenshot pending from user
+  b31: "/img/step37.png",
   b32: "/img/installedapps32.PNG",
   b33: "/img/youreallset35.PNG",
 };
