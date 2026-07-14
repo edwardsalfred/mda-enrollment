@@ -861,6 +861,15 @@ export default function EnrollmentWalkthrough() {
               {isLast ? "Finish" : (step.doneLabel || "Continue →")}
             </button>
           </div>
+          {i > 0 && (
+            <div style={{ textAlign: "center", marginTop: 14 }}>
+              <button onClick={() => { setI(i - 1); setTapped(false); setBranchPick(null); }}
+                style={{
+                  background: "none", border: "none", color: BRAND.muted,
+                  fontSize: 13, cursor: "pointer", textDecoration: "underline", padding: 0,
+                }}>← Back a step</button>
+            </div>
+          )}
         </div>
       ) : (
       <div className="ew-row" style={{
