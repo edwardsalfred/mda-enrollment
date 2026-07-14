@@ -158,7 +158,7 @@ const BRAND = {
 
 // ElevenLabs voiceover clips for the Microsoft Multifactor + Duo sequence (step 24).
 const AUDIO = {
-  intro: "/audio/intro.mp3",
+  intro: "/audio/watch-the-sequence.mp3",
   verify: "/audio/verify.mp3",
   openDuo: "/audio/openDuo.mp3",
   enterCode: "/audio/enterCode.mp3",
