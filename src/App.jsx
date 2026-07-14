@@ -473,27 +473,26 @@ const STEPS_BYOD = [
   // ---------- SECTION 5: Install Profile ----------
   { id: 21, section: "Install Profile", title: "How to install the profile", narration: "Comp Portal shows the steps for installing the management profile. Read them, then follow along on the next screens.", image: IMG.b17, hx: null, hy: null, htext: "", doneLabel: "Got it, continue →" },
   { id: 22, section: "Install Profile", title: "Open Settings", narration: "Swipe up to close Comp Portal, then tap the Settings app on your Home Screen.", image: IMG.b18, hx: 88, hy: 40, htext: "Tap Settings", spotlight: { x: 74, y: 31, w: 21, h: 14 } },
-  { id: 23, section: "Install Profile", title: "Tap the downloaded profile banner", narration: "At the top of Settings, tap the banner showing Profile Downloaded (under your Apple ID card).", image: IMG.b19, hx: 80, hy: 44, htext: "Tap More for Your iPhone" },
-  { id: 24, section: "Install Profile", title: "Review the Management Profile", narration: "The Management Profile screen opens. Review the details, then tap Install in the top-right.", image: IMG.b20, hx: 33, hy: 65, htext: "Tap View Profile", autoPlay: 3000 },
-  { id: 25, section: "Install Profile", title: "Tap Install", narration: "On the profile detail screen, tap Install in the top-right corner.", image: IMG.b21, hx: 91, hy: 12, htext: "Tap Install" },
-  { id: 26, section: "Install Profile", title: "Enter your device passcode", narration: "iOS asks for your device passcode to authorize the installation. Enter it now.", image: IMG.b22, hx: 50, hy: 50, htext: "Enter passcode", sensitive: true },
-  { id: 27, section: "Install Profile", title: "Confirm Install", narration: "On the warning sheet, tap Install to confirm.", image: IMG.b23, hx: 77, hy: 57, htext: "Tap Install" },
-  { id: 28, section: "Install Profile", title: "Install one more time", narration: "One more Install confirmation appears. Tap Install.", image: IMG.b24, hx: 91, hy: 12, htext: "Tap Install" },
-  { id: 29, section: "Install Profile", title: "Tap Trust", narration: "iOS asks whether you trust MD Anderson to manage this device. Tap Trust.", image: IMG.b25, hx: 76, hy: 58, htext: "Tap Trust" },
-  { id: 30, section: "Install Profile", title: "Enrolling certificate…", narration: "The profile is being enrolled. Wait here — this can take a minute.", image: IMG.b26, hx: null, hy: null, htext: "", wait: 3000, waitLabel: "Enrolling certificate…", doneLabel: "Continue →" },
-  { id: 31, section: "Install Profile", title: "Tap Done", narration: "When you see the profile with a checkmark, tap Done to close Settings.", image: IMG.b27, hx: 93, hy: 13, htext: "Tap the blue checkmark" },
+  { id: 23, section: "Install Profile", title: "Tap the downloaded profile banner", narration: "At the top of Settings, tap the banner showing Profile Downloaded (under your Apple ID card).", image: IMG.b19, hx: 50, hy: 57, htext: "Tap Profile Downloaded" },
+  { id: 24, section: "Install Profile", title: "Tap Install", narration: "On the profile detail screen, tap Install in the top-right corner.", image: IMG.b21, hx: 91, hy: 12, htext: "Tap Install" },
+  { id: 25, section: "Install Profile", title: "Enter your device passcode", narration: "iOS asks for your device passcode to authorize the installation. Enter it now.", image: IMG.b22, hx: 50, hy: 50, htext: "Enter passcode", sensitive: true },
+  { id: 26, section: "Install Profile", title: "Confirm Install", narration: "On the warning sheet, tap Install to confirm.", image: IMG.b23, hx: 77, hy: 57, htext: "Tap Install" },
+  { id: 27, section: "Install Profile", title: "Install one more time", narration: "One more Install confirmation appears. Tap Install.", image: IMG.b24, hx: 91, hy: 12, htext: "Tap Install" },
+  { id: 28, section: "Install Profile", title: "Tap Trust", narration: "iOS asks whether you trust MD Anderson to manage this device. Tap Trust.", image: IMG.b25, hx: 76, hy: 58, htext: "Tap Trust" },
+  { id: 29, section: "Install Profile", title: "Enrolling certificate…", narration: "The profile is being enrolled. Wait here — this can take a minute.", image: IMG.b26, hx: null, hy: null, htext: "", wait: 3000, waitLabel: "Enrolling certificate…", doneLabel: "Continue →" },
+  { id: 30, section: "Install Profile", title: "Tap Done", narration: "When you see the profile with a checkmark, tap Done to close Settings.", image: IMG.b27, hx: 93, hy: 13, htext: "Tap the blue checkmark" },
 
   // ---------- SECTION 6: Finish Setup ----------
-  { id: 32, section: "Finish Setup", title: "Choose the Personal category", narration: "Reopen Comp Portal. On the Choose the Best Category for This Device screen, tap Personal, then Continue.", image: IMG.b28, hx: 50, hy: 50, htext: "Tap Personal, then Continue" },
-  { id: 33, section: "Finish Setup", title: "Install the management profile", narration: "On the You Need to Install the Management Profile screen, tap Continue.", image: IMG.b29, hx: 66, hy: 90, htext: "Tap Continue" },
-  { id: 34, section: "Finish Setup", title: "Checking device settings…", narration: "Comp Portal checks that your device meets MDA policy. If it stalls, tap Retry. Full compliance can take up to 30 minutes — you can close the Comp Portal app while you wait.", image: IMG.b30, hx: 50, hy: 50, htext: "Tap Retry if needed", wait: 3000, waitLabel: "Checking device settings…", doneLabel: "Continue →" },
+  { id: 31, section: "Finish Setup", title: "Choose the Personal category", narration: "Reopen Comp Portal. On the Choose the Best Category for This Device screen, tap Personal, then Continue.", image: IMG.b28, hx: 50, hy: 50, htext: "Tap Personal, then Continue" },
+  { id: 32, section: "Finish Setup", title: "Install the management profile", narration: "On the You Need to Install the Management Profile screen, tap Continue.", image: IMG.b29, hx: 66, hy: 90, htext: "Tap Continue" },
+  { id: 33, section: "Finish Setup", title: "Checking device settings…", narration: "Comp Portal checks that your device meets MDA policy. If it stalls, tap Retry. Full compliance can take up to 30 minutes — you can close the Comp Portal app while you wait.", image: IMG.b30, hx: 50, hy: 50, htext: "Tap Retry if needed", wait: 3000, waitLabel: "Checking device settings…", doneLabel: "Continue →" },
 
-  { id: 35, section: "Finish Setup", title: "You're all set!", narration: "Comp Portal confirms enrollment is complete — you now have access to your email, devices, Wi-Fi, and apps for work. Tap Done.", image: IMG.b33, hx: 60, hy: 90, htext: "Tap Done" },
+  { id: 34, section: "Finish Setup", title: "You're all set!", narration: "Comp Portal confirms enrollment is complete — you now have access to your email, devices, Wi-Fi, and apps for work. Tap Done.", image: IMG.b33, hx: 60, hy: 90, htext: "Tap Done" },
 
   // ---------- SECTION 7: Apps ----------
-  { id: 36, section: "Apps", title: "Your work apps are installed", narration: "Your Home Screen now shows the managed work apps. Your device is enrolled and ready to use.", image: IMG.b32, hx: null, hy: null, htext: "", blurAreas: [{ x: 84, y: 6, w: 13, h: 7 }], doneLabel: "Continue →" },
+  { id: 35, section: "Apps", title: "Your work apps are installed", narration: "Your Home Screen now shows the managed work apps. Your device is enrolled and ready to use.", image: IMG.b32, hx: null, hy: null, htext: "", blurAreas: [{ x: 84, y: 6, w: 13, h: 7 }], doneLabel: "Continue →" },
   {
-    id: 37, section: "Apps",
+    id: 36, section: "Apps",
     title: "If prompted, manage or install an app",
     narration: "Work apps (Outlook, Authenticator, OneDrive, MS Defender, Teams, Edge, Employee) install automatically. If an app was already on your device, you may see a Manage the App prompt — tap OK. If an app didn't install on its own, open Comp Portal, tap the app, then Install, and follow the App Store prompt.",
     image: IMG.b31, hx: null, hy: null, htext: "",
