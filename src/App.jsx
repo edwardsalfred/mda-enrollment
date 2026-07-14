@@ -761,6 +761,25 @@ export default function EnrollmentWalkthrough() {
             Choose the path that matches your device. Each is a guided, tap-along walkthrough.
           </p>
 
+          <div style={{
+            maxWidth: 520, margin: "22px auto 0",
+            background: BRAND.white, border: `1px solid ${BRAND.line}`, borderRadius: 14,
+            padding: "12px 16px", display: "flex", alignItems: "center", gap: 12,
+            boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+          }}>
+            <div style={{ fontSize: 13, fontWeight: 700, color: BRAND.ink, whiteSpace: "nowrap" }}>
+              Intro voiceover
+            </div>
+            <audio
+              controls
+              preload="none"
+              src="/audio/mds-intro.mp3"
+              style={{ flex: 1, height: 36 }}
+            >
+              Your browser does not support audio playback.
+            </audio>
+          </div>
+
           <div className="ew-cards" style={{
             display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20,
             maxWidth: 780, margin: "32px auto 8px",
