@@ -140,6 +140,15 @@ const IMG = {
   b31: "/img/step37.png",
   b32: "/img/installedapps32.PNG",
   b33: "/img/youreallset35.PNG",
+
+  // ---- Security Delay (Stolen Device Protection) removal, BYOD step 1 ----
+  sd01: "/img/sd01_settings.png",
+  sd02: "/img/sd02_faceid_passcode.png",
+  sd03: "/img/sd03_enter_passcode.png",
+  sd04: "/img/sd04_stolen_device.png",
+  sd05: "/img/sd05_toggle_off.png",
+  sd06: "/img/sd06_start_delay.png",
+  sd07: "/img/sd07_done.png",
 };
 
 const BRAND = {
@@ -278,6 +287,7 @@ const STEPS = [
 // BYOD (Bring Your Own Device) — personal iPhone/iPad Intune enrollment
 // -----------------------------------------------------------------------------
 const SECTIONS_BYOD = [
+  "Security Delay",
   "Install",
   "Sign In",
   "Setup Access",
@@ -288,9 +298,54 @@ const SECTIONS_BYOD = [
 ];
 
 const STEPS_BYOD = [
-  // ---------- SECTION 1: Install ----------
+  // ---------- SECTION 1: Security Delay (Stolen Device Protection off) ----------
   {
-    id: 1, section: "Install",
+    id: 1, section: "Security Delay",
+    title: "Open Settings",
+    narration: "Before we begin enrollment, you'll turn off the Stolen Device Protection security delay so nothing blocks you later. On your Home Screen, tap the Settings app.",
+    image: IMG.sd01, hx: 84, hy: 38, htext: "Tap Settings",
+    spotlight: { x: 75, y: 32.5, w: 21, h: 12.5 },
+  },
+  {
+    id: 2, section: "Security Delay",
+    title: "Tap Face ID & Passcode",
+    narration: "In Settings, scroll down and tap Face ID & Passcode.",
+    image: IMG.sd02, hx: 35, hy: 68, htext: "Tap Face ID & Passcode",
+  },
+  {
+    id: 3, section: "Security Delay",
+    title: "Enter your screen passcode",
+    narration: "Enter your iPhone screen passcode to unlock Face ID & Passcode settings.",
+    image: IMG.sd03, hx: 50, hy: 50, htext: "Enter passcode", sensitive: true,
+  },
+  {
+    id: 4, section: "Security Delay",
+    title: "Tap Stolen Device Protection",
+    narration: "Scroll down in Face ID & Passcode and tap Stolen Device Protection.",
+    image: IMG.sd04, fit: "contain", imgRatio: 217 / 352, hx: 80, hy: 63, htext: "Tap Stolen Device Protection",
+  },
+  {
+    id: 5, section: "Security Delay",
+    title: "Turn off Stolen Device Protection",
+    narration: "Tap the toggle to turn Stolen Device Protection off. A Security Delay warning window will appear next.",
+    image: IMG.sd05, fit: "contain", imgRatio: 210 / 351, hx: 83, hy: 13, htext: "Toggle off",
+  },
+  {
+    id: 6, section: "Security Delay",
+    title: "Tap Start Security Delay",
+    narration: "On the Security Delay prompt, tap Start Security Delay. A one-hour countdown begins.",
+    image: IMG.sd06, fit: "contain", imgRatio: 187 / 352, hx: 50, hy: 88, htext: "Tap Start Security Delay",
+  },
+  {
+    id: 7, section: "Security Delay",
+    title: "Tap Done",
+    narration: "The Security Delay is now in progress and the one-hour countdown has started. Tap Done. After the hour, come back to Face ID & Passcode → Stolen Device Protection, verify Face ID, and turn it off. Then continue with enrollment below.",
+    image: IMG.sd07, fit: "contain", imgRatio: 177 / 353, hx: 50, hy: 84, htext: "Tap Done",
+  },
+
+  // ---------- SECTION 2: Install ----------
+  {
+    id: 8, section: "Install",
     title: "Before you start — previous AirWatch enrollment?",
     narration: "If your device was previously enrolled with AirWatch, you'll need to remove that first. Pick the option that matches your device to continue.",
     image: null, hx: null, hy: null, htext: "",
@@ -315,28 +370,28 @@ const STEPS_BYOD = [
     },
   },
   {
-    id: 2, section: "Install",
+    id: 9, section: "Install",
     title: "Open the App Store",
     narration: "On your device, tap the App Store on your Home Screen.",
     image: IMG.b01, hx: 88, hy: 40, htext: "Tap App Store",
     spotlight: { x: 74, y: 31, w: 21, h: 14 },
   },
   {
-    id: 3, section: "Install",
+    id: 10, section: "Install",
     title: "Search Intune Company Portal and tap Get",
     narration: "Search for Intune Company Portal and tap Get to install it. Once it finishes, swipe up and tap the Comp Portal app to open it.",
     image: IMG.b02, hx: 92, hy: 65, htext: "Tap Get",
   },
 
-  // ---------- SECTION 2: Sign In ----------
+  // ---------- SECTION 3: Sign In ----------
   {
-    id: 4, section: "Sign In",
+    id: 11, section: "Sign In",
     title: "Sign in to Comp Portal",
     narration: "The Comp Portal app opens on the sign-in screen. Tap Sign in to begin.",
     image: IMG.b03, hx: 62, hy: 57, htext: "Tap Sign in",
   },
   {
-    id: 5, section: "Sign In",
+    id: 12, section: "Sign In",
     title: "Enter your MDA email",
     narration: "Type your MD Anderson email address, then tap Next. On the next screen, enter your password and tap Sign in.",
     image: IMG.b04, hx: 91, hy: 44, htext: "Tap Sign in",
@@ -344,54 +399,54 @@ const STEPS_BYOD = [
     blurAreas: [{ x: 4, y: 18, w: 18.5, h: 4 }],
   },
   {
-    id: 6, section: "Sign In",
+    id: 13, section: "Sign In",
     title: "Open Duo Mobile",
     narration: "Duo needs to check this device. Tap Open Duo Mobile. On the separate phone that has Duo Mobile installed, approve the push notification.",
     image: IMG.b05, hx: 72, hy: 42, htext: "Tap Open Duo Mobile",
   },
   {
-    id: 7, section: "Sign In",
+    id: 14, section: "Sign In",
     title: "Head back to Comp Portal",
     narration: "After you approve the login in Duo Mobile, tap Comp Portal in the top-left corner to head back to the enrollment flow.",
     image: IMG.b06, hx: 20, hy: 6, htext: "Tap Comp Portal",
   },
 
-  // ---------- SECTION 3: Setup Access ----------
+  // ---------- SECTION 4: Setup Access ----------
   {
-    id: 8, section: "Setup Access",
+    id: 15, section: "Setup Access",
     title: "Get notified so you don't lose access → OK",
     narration: "On the Get Notified So You Don't Lose Access screen, tap OK.",
     image: IMG.b07, hx: 60, hy: 91, htext: "Tap OK",
   },
   {
-    id: 9, section: "Setup Access",
+    id: 16, section: "Setup Access",
     title: "Allow Comp Portal notifications",
     narration: "When iOS asks whether Comp Portal can send notifications, tap Allow.",
     image: IMG.b08, hx: 78, hy: 59, htext: "Tap Allow",
   },
   {
-    id: 10, section: "Setup Access",
+    id: 17, section: "Setup Access",
     title: "Set up MDA access → Begin",
     narration: "On the Set Up MD Anderson Cancer Center Access screen, tap Begin.",
     image: IMG.b09, hx: 60, hy: 91, htext: "Tap Begin",
   },
   {
-    id: 11, section: "Setup Access",
+    id: 18, section: "Setup Access",
     title: "Device Management & Your Privacy → Can",
     narration: "The Device Management and Your Privacy screen shows what MD Anderson can and cannot see on your device. Tap Can to review the list, then tap Continue at the bottom.",
     image: IMG.b09a, hx: 85, hy: 42, htext: "Tap Can, then Continue",
     extraDots: [{ x: 66, y: 95 }],
   },
   {
-    id: 12, section: "Setup Access",
+    id: 19, section: "Setup Access",
     title: "Back at the setup checklist → Continue",
     narration: "Privacy review is complete — the setup checklist reappears with the first item checked. Tap Continue.",
     image: IMG.b10, hx: 66, hy: 90, htext: "Tap Continue",
   },
 
-  // ---------- SECTION 4: Download Profile ----------
+  // ---------- SECTION 5: Download Profile ----------
   {
-    id: 13, section: "Download Profile",
+    id: 20, section: "Download Profile",
     title: "Sign in again to download the profile",
     narration: "Enter your MD Anderson email again to re-authenticate for the profile download, then tap Sign in.",
     image: IMG.b11, hx: 91, hy: 44, htext: "Tap Sign in",
@@ -399,63 +454,63 @@ const STEPS_BYOD = [
     blurAreas: [{ x: 4, y: 18, w: 18.5, h: 4 }],
   },
   {
-    id: 14, section: "Download Profile",
+    id: 21, section: "Download Profile",
     title: "Open Duo Mobile again",
     narration: "Tap Open Duo Mobile so Duo can verify this download.",
     image: IMG.b12, hx: 72, hy: 42, htext: "Tap Open Duo Mobile",
   },
   {
-    id: 15, section: "Download Profile",
+    id: 22, section: "Download Profile",
     title: "Accept the Duo push",
     narration: "On your separate phone with Duo Mobile, tap the green Approve icon to approve the profile download.",
     image: IMG.b13, hx: 83, hy: 85, htext: "Tap Approve",
     blurAreas: [{ x: 19, y: 23.5, w: 47, h: 6 }, { x: 14, y: 67.5, w: 55, h: 4 }],
   },
   {
-    id: 16, section: "Download Profile",
+    id: 23, section: "Download Profile",
     title: "Allow the configuration profile download",
     narration: "iOS asks whether portal.manage.microsoft.com can download a configuration profile. Tap Allow.",
     image: IMG.b14, hx: 92, hy: 57, htext: "Tap Allow",
   },
   {
-    id: 17, section: "Download Profile",
+    id: 24, section: "Download Profile",
     title: "Head back to your app",
     narration: "Once the push is approved in Duo, you'll see Head Back to Your App. Tap the top-left corner to return to the Comp Portal profile download.",
     image: IMG.b06, hx: 20, hy: 6, htext: "Tap to head back",
   },
   {
-    id: 18, section: "Download Profile",
+    id: 25, section: "Download Profile",
     title: "Profile Downloaded → Close",
     narration: "When you see the Profile Downloaded prompt, tap Close. You'll install the profile in the next section.",
     image: IMG.b15, hx: 62, hy: 57, htext: "Tap Close",
   },
-  { id: 19, section: "Download Profile", title: "Continue to Company Portal", narration: "On the Continue to Company Portal screen, tap Continue.", image: IMG.b16, hx: 60, hy: 60, htext: "Tap Continue" },
+  { id: 26, section: "Download Profile", title: "Continue to Company Portal", narration: "On the Continue to Company Portal screen, tap Continue.", image: IMG.b16, hx: 60, hy: 60, htext: "Tap Continue" },
 
-  { id: 20, section: "Download Profile", title: "Setup checklist — download done → Continue", narration: "Back in Comp Portal, the setup checklist now shows Review Privacy Information and Download Management Profile checked. Tap Continue to move on to installing the profile.", image: IMG.b16a, hx: 66, hy: 90, htext: "Tap Continue" },
+  { id: 27, section: "Download Profile", title: "Setup checklist — download done → Continue", narration: "Back in Comp Portal, the setup checklist now shows Review Privacy Information and Download Management Profile checked. Tap Continue to move on to installing the profile.", image: IMG.b16a, hx: 66, hy: 90, htext: "Tap Continue" },
 
-  // ---------- SECTION 5: Install Profile ----------
-  { id: 21, section: "Install Profile", title: "How to install the profile", narration: "Comp Portal shows the steps for installing the management profile. Read them, then follow along on the next screens.", image: IMG.b17, hx: null, hy: null, htext: "", doneLabel: "Got it, continue →" },
-  { id: 22, section: "Install Profile", title: "Open Settings", narration: "Swipe up to close Comp Portal, then tap the Settings app on your Home Screen.", image: IMG.b18, hx: 88, hy: 40, htext: "Tap Settings", spotlight: { x: 74, y: 31, w: 21, h: 14 } },
-  { id: 23, section: "Install Profile", title: "Tap the downloaded profile banner", narration: "At the top of Settings, tap the banner showing Profile Downloaded (under your Apple ID card).", image: IMG.b19, hx: 50, hy: 57, htext: "Tap Profile Downloaded" },
-  { id: 24, section: "Install Profile", title: "Tap Install", narration: "On the profile detail screen, tap Install in the top-right corner.", image: IMG.b21, hx: 91, hy: 12, htext: "Tap Install" },
-  { id: 25, section: "Install Profile", title: "Enter your device passcode", narration: "iOS asks for your device passcode to authorize the installation. Enter it now.", image: IMG.b22, hx: 50, hy: 50, htext: "Enter passcode", sensitive: true },
-  { id: 26, section: "Install Profile", title: "Confirm Install", narration: "On the warning sheet, tap Install to confirm.", image: IMG.b23, hx: 77, hy: 57, htext: "Tap Install" },
-  { id: 27, section: "Install Profile", title: "Install one more time", narration: "One more Install confirmation appears. Tap Install.", image: IMG.b24, hx: 91, hy: 12, htext: "Tap Install" },
-  { id: 28, section: "Install Profile", title: "Tap Trust", narration: "iOS asks whether you trust MD Anderson to manage this device. Tap Trust.", image: IMG.b25, hx: 76, hy: 58, htext: "Tap Trust" },
-  { id: 29, section: "Install Profile", title: "Enrolling certificate…", narration: "The profile is being enrolled. Wait here — this can take a minute.", image: IMG.b26, hx: null, hy: null, htext: "", wait: 3000, waitLabel: "Enrolling certificate…", doneLabel: "Continue →" },
-  { id: 30, section: "Install Profile", title: "Tap Done", narration: "When you see the profile with a checkmark, tap Done to close Settings.", image: IMG.b27, hx: 93, hy: 13, htext: "Tap the blue checkmark" },
+  // ---------- SECTION 6: Install Profile ----------
+  { id: 28, section: "Install Profile", title: "How to install the profile", narration: "Comp Portal shows the steps for installing the management profile. Read them, then follow along on the next screens.", image: IMG.b17, hx: null, hy: null, htext: "", doneLabel: "Got it, continue →" },
+  { id: 29, section: "Install Profile", title: "Open Settings", narration: "Swipe up to close Comp Portal, then tap the Settings app on your Home Screen.", image: IMG.b18, hx: 88, hy: 40, htext: "Tap Settings", spotlight: { x: 74, y: 31, w: 21, h: 14 } },
+  { id: 30, section: "Install Profile", title: "Tap the downloaded profile banner", narration: "At the top of Settings, tap the banner showing Profile Downloaded (under your Apple ID card).", image: IMG.b19, hx: 50, hy: 57, htext: "Tap Profile Downloaded" },
+  { id: 31, section: "Install Profile", title: "Tap Install", narration: "On the profile detail screen, tap Install in the top-right corner.", image: IMG.b21, hx: 91, hy: 12, htext: "Tap Install" },
+  { id: 32, section: "Install Profile", title: "Enter your device passcode", narration: "iOS asks for your device passcode to authorize the installation. Enter it now.", image: IMG.b22, hx: 50, hy: 50, htext: "Enter passcode", sensitive: true },
+  { id: 33, section: "Install Profile", title: "Confirm Install", narration: "On the warning sheet, tap Install to confirm.", image: IMG.b23, hx: 77, hy: 57, htext: "Tap Install" },
+  { id: 34, section: "Install Profile", title: "Install one more time", narration: "One more Install confirmation appears. Tap Install.", image: IMG.b24, hx: 91, hy: 12, htext: "Tap Install" },
+  { id: 35, section: "Install Profile", title: "Tap Trust", narration: "iOS asks whether you trust MD Anderson to manage this device. Tap Trust.", image: IMG.b25, hx: 76, hy: 58, htext: "Tap Trust" },
+  { id: 36, section: "Install Profile", title: "Enrolling certificate…", narration: "The profile is being enrolled. Wait here — this can take a minute.", image: IMG.b26, hx: null, hy: null, htext: "", wait: 3000, waitLabel: "Enrolling certificate…", doneLabel: "Continue →" },
+  { id: 37, section: "Install Profile", title: "Tap Done", narration: "When you see the profile with a checkmark, tap Done to close Settings.", image: IMG.b27, hx: 93, hy: 13, htext: "Tap the blue checkmark" },
 
-  // ---------- SECTION 6: Finish Setup ----------
-  { id: 31, section: "Finish Setup", title: "Choose the Personal category", narration: "Reopen Comp Portal. On the Choose the Best Category for This Device screen, tap Personal, then Continue.", image: IMG.b28, hx: 50, hy: 50, htext: "Tap Personal, then Continue" },
-  { id: 32, section: "Finish Setup", title: "Install the management profile", narration: "On the You Need to Install the Management Profile screen, tap Continue.", image: IMG.b29, hx: 66, hy: 90, htext: "Tap Continue" },
-  { id: 33, section: "Finish Setup", title: "Checking device settings…", narration: "Comp Portal checks that your device meets MDA policy. If it stalls, tap Retry. Full compliance can take up to 30 minutes — you can close the Comp Portal app while you wait.", image: IMG.b30, hx: 50, hy: 50, htext: "Tap Retry if needed", wait: 3000, waitLabel: "Checking device settings…", doneLabel: "Continue →" },
+  // ---------- SECTION 7: Finish Setup ----------
+  { id: 38, section: "Finish Setup", title: "Choose the Personal category", narration: "Reopen Comp Portal. On the Choose the Best Category for This Device screen, tap Personal, then Continue.", image: IMG.b28, hx: 50, hy: 50, htext: "Tap Personal, then Continue" },
+  { id: 39, section: "Finish Setup", title: "Install the management profile", narration: "On the You Need to Install the Management Profile screen, tap Continue.", image: IMG.b29, hx: 66, hy: 90, htext: "Tap Continue" },
+  { id: 40, section: "Finish Setup", title: "Checking device settings…", narration: "Comp Portal checks that your device meets MDA policy. If it stalls, tap Retry. Full compliance can take up to 30 minutes — you can close the Comp Portal app while you wait.", image: IMG.b30, hx: 50, hy: 50, htext: "Tap Retry if needed", wait: 3000, waitLabel: "Checking device settings…", doneLabel: "Continue →" },
 
-  { id: 34, section: "Finish Setup", title: "You're all set!", narration: "Comp Portal confirms enrollment is complete — you now have access to your email, devices, Wi-Fi, and apps for work. Tap Done.", image: IMG.b33, hx: 60, hy: 90, htext: "Tap Done" },
+  { id: 41, section: "Finish Setup", title: "You're all set!", narration: "Comp Portal confirms enrollment is complete — you now have access to your email, devices, Wi-Fi, and apps for work. Tap Done.", image: IMG.b33, hx: 60, hy: 90, htext: "Tap Done" },
 
-  // ---------- SECTION 7: Apps ----------
-  { id: 35, section: "Apps", title: "Your work apps are installed", narration: "Your Home Screen now shows the managed work apps. Your device is enrolled and ready to use.", image: IMG.b32, hx: null, hy: null, htext: "", blurAreas: [{ x: 84, y: 6, w: 13, h: 7 }], doneLabel: "Continue →" },
+  // ---------- SECTION 8: Apps ----------
+  { id: 42, section: "Apps", title: "Your work apps are installed", narration: "Your Home Screen now shows the managed work apps. Your device is enrolled and ready to use.", image: IMG.b32, hx: null, hy: null, htext: "", blurAreas: [{ x: 84, y: 6, w: 13, h: 7 }], doneLabel: "Continue →" },
   {
-    id: 36, section: "Apps",
+    id: 42, section: "Apps",
     title: "If prompted, manage or install an app",
     narration: "Work apps (Outlook, Authenticator, OneDrive, MS Defender, Teams, Edge, Employee) install automatically. If an app was already on your device, you may see a Manage the App prompt — tap OK. If an app didn't install on its own, open Comp Portal, tap the app, then Install, and follow the App Store prompt.",
     image: IMG.b31, hx: null, hy: null, htext: "",
@@ -467,6 +522,18 @@ const FLOWS = {
   corporate: { steps: STEPS, sections: SECTIONS },
   byod: { steps: STEPS_BYOD, sections: SECTIONS_BYOD },
 };
+
+// Phone screen inner dimensions (see .ew-phone CSS: 300×620 frame, inset 11).
+const SCREEN_RATIO = 278 / 598; // width / height
+// When a step uses fit:"contain", the screenshot is narrower-tall than the
+// screen so it fills the full width and letterboxes top/bottom. Hotspot
+// coordinates for those steps are authored relative to the IMAGE (0–100%);
+// this maps an image-relative point to a screen-relative one. x is unchanged
+// (image fills width); y is compressed into the letterboxed band and centered.
+function fitPoint(px, py, imgRatio) {
+  const h = SCREEN_RATIO / imgRatio; // rendered image height as fraction of screen
+  return { x: px, y: (1 - h) / 2 * 100 + py * h };
+}
 
 function PhoneFrame({ step, onHotspot, done }) {
   const hasImage = !!step.image;
@@ -490,7 +557,7 @@ function PhoneFrame({ step, onHotspot, done }) {
       }}>
         {hasImage ? (
           <img src={step.image} alt={step.title} loading="lazy" decoding="async"
-            style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            style={{ width: "100%", height: "100%", objectFit: step.fit === "contain" ? "contain" : "cover" }} />
         ) : (
           <div style={{
             position: "absolute", inset: 0, display: "flex", flexDirection: "column",
@@ -552,7 +619,9 @@ function PhoneFrame({ step, onHotspot, done }) {
         {/* hotspot(s) — solid dot. Primary dot is hx/hy; a step may add
             more via extraDots: [{x,y}]. Positions sit just off the target
             so the word/icon underneath still peeks out. */}
-        {step.hx != null && [{ x: step.hx, y: step.hy }, ...(step.extraDots || [])].map((d, k) => (
+        {step.hx != null && [{ x: step.hx, y: step.hy }, ...(step.extraDots || [])].map((raw, k) => {
+          const d = step.fit === "contain" ? fitPoint(raw.x, raw.y, step.imgRatio) : raw;
+          return (
           <button key={`hs-${k}`} onClick={onHotspot} aria-label={step.htext}
             style={{
               position: "absolute", left: `${d.x}%`, top: `${d.y}%`,
@@ -569,7 +638,8 @@ function PhoneFrame({ step, onHotspot, done }) {
               boxShadow: "0 2px 10px rgba(229,25,55,0.55)",
             }} />
           </button>
-        ))}
+          );
+        })}
 
         {/* sensitive badge */}
         {step.sensitive && (
