@@ -147,6 +147,7 @@ const IMG = {
 
   // ---- Security Delay (Stolen Device Protection) removal, BYOD step 1 ----
   sd01: "/img/sd01_settings.png",
+  homeSettingsBlur: "/img/homeSettingsBlur.png",
   sd02: "/img/sd02_faceid_passcode.png",
   sd03: "/img/sd03_enter_passcode.png",
   sd04: "/img/sd04_stolen_device.png",
@@ -311,8 +312,7 @@ const STEPS_BYOD = [
     id: 1, section: "Security Delay",
     title: "Open Settings",
     narration: "Before we begin enrollment, you'll turn off the Stolen Device Protection security delay so nothing blocks you later. On your Home Screen, tap the Settings app.",
-    image: IMG.sd01, hx: 84, hy: 38, htext: "Tap Settings",
-    spotlight: { x: 75, y: 32.5, w: 21, h: 12.5 },
+    image: IMG.homeSettingsBlur, hx: 84, hy: 38, htext: "Tap Settings",
   },
   {
     id: 2, section: "Security Delay",
@@ -381,8 +381,7 @@ const STEPS_BYOD = [
     id: 9, section: "Install",
     title: "Open the App Store",
     narration: "On your device, tap the App Store on your Home Screen.",
-    image: IMG.b01, hx: 88, hy: 40, htext: "Tap App Store",
-    spotlight: { x: 74, y: 31, w: 21, h: 14 },
+    image: IMG.homeSettingsBlur, hx: 84, hy: 38, htext: "Tap App Store",
   },
   {
     id: 10, section: "Install",
@@ -498,7 +497,7 @@ const STEPS_BYOD = [
 
   // ---------- SECTION 6: Install Profile ----------
   { id: 28, section: "Install Profile", title: "How to install the profile", narration: "Comp Portal shows the steps for installing the management profile. Read them, then follow along on the next screens.", image: IMG.b17, hx: null, hy: null, htext: "", doneLabel: "Got it, continue →" },
-  { id: 29, section: "Install Profile", title: "Open Settings", narration: "Swipe up to close Comp Portal, then tap the Settings app on your Home Screen.", image: IMG.b18, hx: 88, hy: 40, htext: "Tap Settings", spotlight: { x: 74, y: 31, w: 21, h: 14 } },
+  { id: 29, section: "Install Profile", title: "Open Settings", narration: "Swipe up to close Comp Portal, then tap the Settings app on your Home Screen.", image: IMG.homeSettingsBlur, hx: 84, hy: 38, htext: "Tap Settings" },
   { id: 30, section: "Install Profile", title: "Tap the downloaded profile banner", narration: "At the top of Settings, tap the banner showing Profile Downloaded (under your Apple ID card).", image: IMG.b19, hx: 50, hy: 57, htext: "Tap Profile Downloaded" },
   { id: 31, section: "Install Profile", title: "Tap Install", narration: "On the profile detail screen, tap Install in the top-right corner.", image: IMG.b21, hx: 91, hy: 12, htext: "Tap Install" },
   { id: 32, section: "Install Profile", title: "Enter your device passcode", narration: "iOS asks for your device passcode to authorize the installation. Enter it now.", image: IMG.b22, hx: 50, hy: 50, htext: "Enter passcode", sensitive: true },
