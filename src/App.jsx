@@ -148,6 +148,7 @@ const IMG = {
   // ---- Security Delay (Stolen Device Protection) removal, BYOD step 1 ----
   sd01: "/img/sd01_settings.png",
   homeSettingsBlur: "/img/homeSettingsBlur.png",
+  homeAppStoreBlur: "/img/homeAppStoreBlur.png",
   sd02: "/img/sd02_faceid_passcode.png",
   sd03: "/img/sd03_enter_passcode.png",
   sd04: "/img/sd04_stolen_device.png",
@@ -381,7 +382,7 @@ const STEPS_BYOD = [
     id: 9, section: "Install",
     title: "Open the App Store",
     narration: "On your device, tap the App Store on your Home Screen.",
-    image: IMG.homeSettingsBlur, hx: 84, hy: 38, htext: "Tap App Store",
+    image: IMG.homeAppStoreBlur, hx: 15, hy: 60, htext: "Tap App Store",
   },
   {
     id: 10, section: "Install",
